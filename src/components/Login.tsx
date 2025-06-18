@@ -14,7 +14,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       onLogin(username, password);
     }
   };
-
+  // This component renders a simple login form with username and password fields.
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: 320, margin: '0 auto' }}>
       <h2>Login</h2>
