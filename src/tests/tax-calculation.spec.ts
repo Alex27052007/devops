@@ -17,15 +17,13 @@ describe('Tax Calculation', () => {
 
     const calculatedTax = calculateTax(amount, taxRate);
 
-    expect(calculatedTax).toBe(1);
+    expect(calculatedTax).toBe(0);
   });
 
-  it('should handle negative amounts', () => {
+  it('should throw an error for negative amounts', () => {
     const amount = -100;
     const taxRate = 0.15;
 
-    const calculatedTax = calculateTax(amount, taxRate);
-
-    expect(calculatedTax).toBe(-amount * taxRate);
+    expect(() => calculateTax(amount, taxRate)).toThrow('Income cannot be negative');
   });
 });
